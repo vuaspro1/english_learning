@@ -63,7 +63,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15.0),
+                      borderRadius: BorderRadius.circular(tBorderRadiusCircular),
                     ),
                     labelText: tUserName,
                     filled: true,
@@ -78,7 +78,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       obscureText: _obscureText,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15.0),
+                          borderRadius: BorderRadius.circular(tBorderRadiusCircular),
                         ),
                         labelText: tPassword,
                         filled: true,
@@ -100,22 +100,22 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   width: textFieldWidth, // Đặt chiều rộng của Container bằng với TextField
                   child: ElevatedButton(
                     onPressed: _loginButtonPressed,
-                    child: Text("LOGIN",
-                      style: TextStyle(fontSize: 20,
-                      color: Colors.lightBlue),
+                    child: Text(tLoginTitle,
+                      style: TextStyle(fontSize: tDefaultSize,
+                      color: tTextButtonColor),
                     ),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.blue[100]),
+                      backgroundColor: MaterialStateProperty.all(tBackgroundButtonColor),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0), // Đặt bán kính cong
+                          borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
                         ),
                       ),
                       minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
                     ),
                   ),
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: tFormHeight-20),
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Column(
@@ -139,14 +139,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           fontSize: tFontSizeSubTitle,
                         ),
                       ),
-                      SizedBox(height: 10.0),
+                      SizedBox(height: tFormHeight-20),
                       TextButton(
                         onPressed: _signUpButtonPressed,
                         child: Text(
                           tSignUp,
                           style: TextStyle(
-                            fontSize: tFontSizeSubTitle + 10.0,
-                            color: Colors.blue,
+                            fontSize: tDefaultSize,
+                            color: tTextButtonColor,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

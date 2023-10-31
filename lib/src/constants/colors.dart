@@ -8,5 +8,7 @@ const tCardBgColor = Color(0xFFF7F6F1);
 const tWhiteColor = Color(0xffffffff);
 const tDarkColor = Color(0xFF000000);
 
-const tBackGroundColor = Color(0xFF90D0DA);
-const tTextFieldBackgroundColor = Color(0xFFEEEEEE);
+const tBackGroundColor = Color(0xFFEAFAFC);
+const tTextFieldBackgroundColor = Color(0xFFFDFDFE);
+const tTextButtonColor = Color(0xFF09AAF3);
+const tBackgroundButtonColor = Color(0xFFCBF4F9);

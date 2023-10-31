@@ -12,7 +12,6 @@ const String tDontHaveAccount = "Don't have an Account?";
 const String tSignUp = "Sign Up";
 
 // -- Sign Up Screen Text
-const String tSignUpTitle = "Sign Up";
 const String tSignUpSubTitle = "Please register an account to experience the application";
 const String tFullName = "Full Name";
 const String tEmail = "Email";
@@ -23,3 +22,4 @@ const String tAddress = "Address";
 enum Gender { male, female }
 const String tMale = "Male";
 const String tFemale = "Female";
+const String tVerifyPassword = "Verify password";
