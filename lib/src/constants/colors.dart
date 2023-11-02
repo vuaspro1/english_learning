@@ -12,3 +12,5 @@ const tBackGroundColor = Color(0xFFEAFAFC);
 const tTextFieldBackgroundColor = Color(0xFFFDFDFE);
 const tTextButtonColor = Color(0xFF09AAF3);
 const tBackgroundButtonColor = Color(0xFFCBF4F9);
+const tLogoutButtonColor = Color(0xFFEAD4D6) ;
+const tLogoutTextColor = Color(0xFFFD0F01);

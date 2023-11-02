@@ -16,12 +16,12 @@ const String tClose = "Close";
 
 // -- Sign Up Screen Text
 const String tSignUpSubTitle = "Please register an account to experience the application";
-const String tFullName = "Full Name";
-const String tEmail = "Email";
-const String tPhone = "Phone";
-const String tDateOfBirth = "Date of birth";
-const String tGender = "Gender";
-const String tAddress = "Address";
+const String tFullName = "Full Name : ";
+const String tEmail = "Email : ";
+const String tPhone = "Phone : ";
+const String tDateOfBirth = "Date of birth : ";
+const String tGender = "Gender : ";
+const String tAddress = "Address : ";
 enum Gender { male, female }
 const String tMale = "Male";
 const String tFemale = "Female";
@@ -36,3 +36,5 @@ const String tPhoneUser = "0123456789";
 const String tDateOfBirthUser = "01/02/2002";
 const String tGenderUser = "Nam";
 const String tAddressUser = "Tam Kỳ";
+const String tSave = "Save";
+const String tLogout = "Logout";

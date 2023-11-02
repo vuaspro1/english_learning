@@ -63,12 +63,18 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         backgroundColor: tBackGroundColor,
         body: Center(
           child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/bg.png"),
+                  fit: BoxFit.cover,
+                )
+            ),
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Align(
+                 const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     tLoginTitle,
@@ -79,7 +85,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ),
                 SizedBox(height: tFormHeight,),
-                Align(
+                const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     tLoginSubTitle,
@@ -131,7 +137,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   width: textFieldWidth, // Đặt chiều rộng của Container bằng với TextField
                   child: ElevatedButton(
                     onPressed: _loginButtonPressed,
-                    child: Text(tLoginTitle,
+                    child:   Text(tLoginTitle,
                       style: TextStyle(fontSize: tDefaultSize,
                       color: tTextButtonColor),
                     ),
@@ -156,7 +162,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         onPressed: () {
                           // Xử lý khi liên kết "Forgot Password" được nhấn
                         },
-                        child: Text(
+                        child: const Text(
                           tForgetPassword,
                           style: TextStyle(
                             fontSize: tFontSizeSubTitle,
@@ -164,7 +170,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           ),
                         ),
                       ),
-                      Text(
+                      const Text(
                         tDontHaveAccount,
                         style: TextStyle(
                           fontSize: tFontSizeSubTitle,
@@ -173,7 +179,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       SizedBox(height: tFormHeight-20),
                       TextButton(
                         onPressed: _signUpButtonPressed,
-                        child: Text(
+                        child: const Text(
                           tSignUp,
                           style: TextStyle(
                             fontSize: tDefaultSize,

@@ -5,6 +5,7 @@ import 'package:english_learning/src/utils/theme/widget_themes/text_field_theme.
 import 'package:flutter/material.dart';
 import 'dart:io';
 
+import '../../../../constants/image_strings.dart';
 import '../../../../constants/text_strings.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -42,6 +43,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
         backgroundColor: tBackGroundColor,
         body: SingleChildScrollView(
           child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(tBackground),
+                fit: BoxFit.cover,
+              ),
+            ),
             padding: const EdgeInsets.all(tDefaultSize),
             child: Column(
               children: [
@@ -210,8 +217,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           width: textFieldWidth,
                           child: ElevatedButton(
                             onPressed: _signUpButtonPressed,
-                            child: Text(tSignUp,
-                              style: TextStyle(fontSize: tFormSize,
+                            child:  Text(tSignUp,
+                              style:  TextStyle(fontSize: tFormSize,
                                   color: tTextButtonColor),
                             ),
                             style: ButtonStyle(
@@ -250,7 +257,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     }
   }
 
-  void _signUpButtonPressed() {
+   void _signUpButtonPressed() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) {
