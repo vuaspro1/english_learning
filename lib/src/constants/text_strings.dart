@@ -10,6 +10,9 @@ const String tPassword = "Password";
 const String tForgetPassword = "Forget Password?";
 const String tDontHaveAccount = "Don't have an Account?";
 const String tSignUp = "Sign Up";
+const String tError = "Error";
+const String tErrorSubTitle = "Invalid username or password.";
+const String tClose = "Close";
 
 // -- Sign Up Screen Text
 const String tSignUpSubTitle = "Please register an account to experience the application";
@@ -23,3 +26,13 @@ enum Gender { male, female }
 const String tMale = "Male";
 const String tFemale = "Female";
 const String tVerifyPassword = "Verify password";
+
+// --Profile Screen Text
+const String tUserNameUser = "user";
+const String tPasswordUser = "user";
+const String tFullNameUser = "Sanh lỏ";
+const String tEmailUser = "sanhlor@gmail.com";
+const String tPhoneUser = "0123456789";
+const String tDateOfBirthUser = "01/02/2002";
+const String tGenderUser = "Nam";
+const String tAddressUser = "Tam Kỳ";

@@ -3,6 +3,7 @@ import 'package:english_learning/src/constants/sizes.dart';
 import 'package:english_learning/src/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
+import '../home/home.dart';
 import '../signup/signup_screen.dart';
 
 class WelcomeScreen extends StatefulWidget{
@@ -13,10 +14,38 @@ class WelcomeScreen extends StatefulWidget{
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   bool _obscureText = true;
   void _loginButtonPressed(){
-
+    if (_usernameController.text == tUserNameUser && _passwordController.text == tPasswordUser) {
+      // If the username and password are "admin", navigate to the HomeScreen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
+    } else {
+      // If the username and password are incorrect, show an error dialog
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(tError),
+            content: Text(tErrorSubTitle),
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // Close the error dialog
+                },
+                child: Text(tClose),
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
+
   void _signUpButtonPressed() {
     Navigator.push(
       context,
@@ -61,6 +90,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
                 SizedBox(height: tFormHeight),
                 TextField(
+                  controller: _usernameController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(tBorderRadiusCircular),
@@ -75,6 +105,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   alignment: Alignment.centerRight,
                   children: [
                     TextField(
+                      controller: _passwordController,
                       obscureText: _obscureText,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
