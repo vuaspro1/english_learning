@@ -10,9 +10,9 @@ const String tPassword = "Password";
 const String tForgetPassword = "Forget Password?";
 const String tDontHaveAccount = "Don't have an Account?";
 const String tSignUp = "Sign Up";
-const String tError = "Error";
+const String tError = "Login failed, please try again";
 const String tErrorSubTitle = "Invalid username or password.";
-const String tClose = "Close";
+const String tClose = "OK";
 
 // -- Sign Up Screen Text
 const String tSignUpSubTitle = "Please register an account to experience the application";

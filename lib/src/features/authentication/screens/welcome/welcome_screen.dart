@@ -3,6 +3,7 @@ import 'package:english_learning/src/constants/sizes.dart';
 import 'package:english_learning/src/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../constants/image_strings.dart';
 import '../home/home.dart';
 import '../signup/signup_screen.dart';
 
@@ -22,7 +23,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       // If the username and password are "admin", navigate to the HomeScreen
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
     } else {
       // If the username and password are incorrect, show an error dialog
@@ -30,14 +31,25 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text(tError),
-            content: Text(tErrorSubTitle),
+            icon: Icon(Icons.error,
+              color: tErrorColor,
+            ),
+            title: const Text(tError),
             actions: [
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pop(); // Close the error dialog
                 },
-                child: Text(tClose),
+                child: const Text(tClose),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(tErrorColor),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
+                    ),
+                  ),
+                  // minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
+                ),
               ),
             ],
           );
@@ -65,11 +77,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           child: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/images/bg.png"),
+                  image: AssetImage(tBackground),
                   fit: BoxFit.cover,
                 )
             ),
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,

@@ -52,29 +52,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
             padding: const EdgeInsets.all(tDefaultSize),
             child: Column(
               children: [
-                // Container(
-                //   margin: EdgeInsets.only(top: 20.0), // Đặt top thành 20 pixel
-                //   child: Align(
-                //     alignment: Alignment.centerLeft,
-                //     child: Column(
-                //       crossAxisAlignment: CrossAxisAlignment.start,
-                //       children: [
-                //         Text(tSignUp,
-                //           style: TextStyle(
-                //             fontSize: tFontSizeTitle,
-                //             fontWeight: FontWeight.bold,
-                //           ),
-                //         ),
-                //         Text( tSignUpSubTitle, // Thay bằng subtitle bạn muốn
-                //           style: TextStyle(
-                //             fontSize: tFontSizeSubTitle, // Tuỳ chỉnh kích thước và kiểu dáng của subtitle
-                //             fontWeight: FontWeight.normal,
-                //           ),
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                // ),
                 Container(
                   padding: const EdgeInsets.symmetric(vertical: tFormHeight -30),
                   child: Form(
@@ -261,7 +238,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) {
-        return WelcomeScreen();
+        return const WelcomeScreen();
       }),
     );
   }
