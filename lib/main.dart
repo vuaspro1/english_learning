@@ -1,4 +1,3 @@
-import 'package:english_learning/src/features/authentication/screens/profile/profile.dart';
 import 'package:english_learning/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:english_learning/src/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const ProfileScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

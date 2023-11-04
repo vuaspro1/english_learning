@@ -41,3 +41,6 @@ const String tSave = "Save";
 const String tLogout = "Logout";
 const String tProfile = "Profile";
 const String tEditProfile = "EditProfile";
+
+// --Nav Bar Screen
+const String tHome = "Home";

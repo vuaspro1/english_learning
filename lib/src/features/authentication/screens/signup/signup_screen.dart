@@ -40,7 +40,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
         ),
         backgroundColor: tBackGroundColor,
-        body: SingleChildScrollView(
+        body: Center(
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(

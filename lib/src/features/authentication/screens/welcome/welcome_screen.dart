@@ -1,11 +1,11 @@
 import 'package:english_learning/src/constants/colors.dart';
 import 'package:english_learning/src/constants/sizes.dart';
 import 'package:english_learning/src/constants/text_strings.dart';
+import 'package:english_learning/src/features/authentication/screens/nav_bar/nav_bar_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../constants/image_strings.dart';
 import '../../../../utils/theme/widget_themes/button_theme.dart';
-import '../home/home.dart';
 import '../signup/signup_screen.dart';
 
 class WelcomeScreen extends StatefulWidget{
@@ -24,7 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       // If the username and password are "admin", navigate to the HomeScreen
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => NavBarScreen()),
       );
     } else {
       // If the username and password are incorrect, show an error dialog

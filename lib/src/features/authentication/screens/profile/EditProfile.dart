@@ -36,18 +36,11 @@ class _EditProfileState extends State<EditProfile> {
               onPressed: () {
                 // Xử lý sự kiện khi người dùng nhấn biểu tượng
                 // Điều hướng đến trang khác ở đây
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const ProfileScreen(); // NextPage là trang bạn muốn chuyển đến
-                    },
-                  ),
-                );
+                Navigator.pop(context);
               },
             ),
         ),
-        body: SingleChildScrollView(
+        body: Center(
           child: Container(
             width: double.infinity,
             decoration: const BoxDecoration(
