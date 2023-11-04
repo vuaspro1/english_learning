@@ -7,3 +7,4 @@ const tFontSizeTitle = 40.0;
 const tFontSizeSubTitle = 16.0;
 const tFormSize = 20.0;
 const tBorderRadiusCircular = 15.0;
+const tFontTextButton =  25.0;

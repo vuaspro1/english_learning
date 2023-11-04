@@ -4,6 +4,8 @@ import 'package:english_learning/src/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../constants/sizes.dart';
+import '../../../../utils/theme/widget_themes/button_theme.dart';
+import '../../../../utils/theme/widget_themes/text_field_row_theme.dart';
 import '../welcome/welcome_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -16,7 +18,6 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    double textFieldWidth = MediaQuery.of(context).size.width - 40.0;
 
     return SafeArea(
       child: Scaffold(
@@ -34,7 +35,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               children: [
 
-               const Text("Profile", style: TextStyle(
+               const Text(tProfile, style: TextStyle(
                   fontSize: tDefaultSize,
                   color: tDarkColor,
                  fontWeight: FontWeight.bold,
@@ -47,7 +48,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
                 decoration: BoxDecoration(
                   color: tTextFieldBackgroundColor,
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(tBorderRadiusCircular),
                   boxShadow: const [
                     BoxShadow(
                       color: Colors.grey, // Màu của đổ bóng
@@ -85,264 +86,44 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
 
-                const SizedBox(height: tFormHeight-10,),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  decoration: BoxDecoration(
-                    color: tTextFieldBackgroundColor,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey, offset: Offset(0, 2), blurRadius: 4.0, spreadRadius: 0.0,
-                      ),
-                    ],// Đặt BorderRadius cho Container ngoài cùng
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 20.0),
-                          child: const Text(tFullName,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(left: 10.0),
-                          child: const Text(tFullNameUser,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
+                const SizedBox(height: tFormHeight - 10),
+                buildTextFieldRow(tFullName, tFullNameUser),
+                const SizedBox(height: tFormHeight - 10),
+                buildTextFieldRow(tGender, tGenderUser),
+                const SizedBox(height: tFormHeight - 10),
+                buildTextFieldRow(tDateOfBirth, tDateOfBirthUser),
+                const SizedBox(height: tFormHeight - 10),
+                buildTextFieldRow(tAddress, tAddressUser),
+                const SizedBox(height: tFormHeight - 10),
+                buildTextFieldRow(tPhone, tPhoneUser),
+                const SizedBox(height: tFormHeight - 10),
+                buildTextFieldRow(tEmail, tEmailUser),//email
 
-                      ),
-                    ],
-                  ),
-                ),//fulname
-
-                const SizedBox(height: tFormHeight-10,),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  decoration: BoxDecoration(
-                    color: tTextFieldBackgroundColor,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey, offset: Offset(0, 2), blurRadius: 4.0, spreadRadius: 0.0,
-                      ),
-                    ],// Đặt BorderRadius cho Container ngoài cùng
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                          margin: EdgeInsets.only(left: 20.0),
-                          child: const Text(tGender,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(left: 10.0),
-                          child: const Text(tGenderUser,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
-
-                      ),
-                    ],
-                  ),
-                ),//gender
-
-                const SizedBox(height: tFormHeight-10,),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  decoration: BoxDecoration(
-                    color: tTextFieldBackgroundColor,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey, offset: Offset(0, 2), blurRadius: 4.0, spreadRadius: 0.0,
-                      ),
-                    ],// Đặt BorderRadius cho Container ngoài cùng
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                          margin: EdgeInsets.only(left: 20.0),
-                          child: const Text(tDateOfBirth,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(left: 10.0),
-                          child: const Text(tDateOfBirthUser,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
-
-                      ),
-                    ],
-                  ),
-                ),//Dob
-
-                const SizedBox(height: tFormHeight-10,),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  decoration: BoxDecoration(
-                    color: tTextFieldBackgroundColor,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey, offset: Offset(0, 2), blurRadius: 4.0, spreadRadius: 0.0,
-                      ),
-                    ],// Đặt BorderRadius cho Container ngoài cùng
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                          margin: EdgeInsets.only(left: 20.0),
-                          child: const Text(tAddress,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(left: 10.0),
-                          child: const Text(tAddressUser,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
-
-                      ),
-                    ],
-                  ),
-                ),//Address
-
-                const SizedBox(height: tFormHeight-10,),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  decoration: BoxDecoration(
-                    color: tTextFieldBackgroundColor,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey, offset: Offset(0, 2), blurRadius: 4.0, spreadRadius: 0.0,
-                      ),
-                    ],// Đặt BorderRadius cho Container ngoài cùng
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                          margin: EdgeInsets.only(left: 20.0),
-                          child: const Text(tPhone,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(left: 10.0),
-                          child: const Text(tPhoneUser,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
-
-                      ),
-                    ],
-                  ),
-                ),//phone
-
-                const SizedBox(height: tFormHeight-10,),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  decoration: BoxDecoration(
-                    color: tTextFieldBackgroundColor,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey, offset: Offset(0, 2), blurRadius: 4.0, spreadRadius: 0.0,
-                      ),
-                    ],// Đặt BorderRadius cho Container ngoài cùng
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                          margin: EdgeInsets.only(left: 20.0),
-                          child: const Text(tEmail,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(left: 10.0),
-                          child: const Text(tEmailUser,
-                            style: TextStyle(
-                                color: tDarkColor, fontWeight: FontWeight.bold, fontSize: tFontSizeSubTitle
-                            ),)
-
-                      ),
-                    ],
-                  ),
-                ),//email
-
-                const SizedBox(height: tFormHeight-10,),
-                Container(
-                  width: textFieldWidth,
-                  child: ElevatedButton(
-                    onPressed:() {},
-                    child: const Text(tSave,
-                      style:  TextStyle(fontSize: tFormSize,
-                          color: tTextButtonColor),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(tBackgroundButtonColor),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
-                        ),
-                      ),
-                      minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
-                    ),
-                  ),
+                const SizedBox(height: tFormHeight - 10),
+                buildCustomButton(
+                  text: tSave,
+                  onPressed: () {},
+                  backgroundColor: tBackgroundButtonColor,
+                  textColor: tTextButtonColor,
                 ),
-
-                const SizedBox(height: tFormHeight-15,),
-                Container(
-                  width: textFieldWidth,
-                  child: ElevatedButton(
-                    onPressed:() {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) {
-                          return WelcomeScreen();
-                        }),
-                      );
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(tLogoutButtonColor),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
-                        ),
-                      ),
-                      minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
-                    ),
-                    child: const Text(tLogout,
-                      style:  TextStyle(fontSize: tFormSize,
-                          color: tLogoutTextColor),
-                    ),
-                  ),
+                const SizedBox(height: tFormHeight - 15),
+                buildCustomButton(
+                  text: tLogout,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return WelcomeScreen();
+                      }),
+                    );
+                  },
+                  backgroundColor: tLogoutButtonColor,
+                  textColor: tLogoutTextColor,
                 ),
-          ],
+              ],
             ),
           ),
-
         ),
-
       ),
     );
   }

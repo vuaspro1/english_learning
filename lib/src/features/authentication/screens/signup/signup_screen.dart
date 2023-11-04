@@ -7,6 +7,7 @@ import 'dart:io';
 
 import '../../../../constants/image_strings.dart';
 import '../../../../constants/text_strings.dart';
+import '../../../../utils/theme/widget_themes/button_theme.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({super.key});
@@ -14,7 +15,6 @@ class SignUpScreen extends StatefulWidget {
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
-
 class _SignUpScreenState extends State<SignUpScreen> {
   bool _obscureText = true;
   Gender? _selectedGender = Gender.male;
@@ -23,7 +23,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double textFieldWidth = MediaQuery.of(context).size.width - 40.0;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -190,24 +189,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ],
                         ),
                         SizedBox(height: tFormHeight),
-                        Container(
-                          width: textFieldWidth,
-                          child: ElevatedButton(
-                            onPressed: _signUpButtonPressed,
-                            child:  Text(tSignUp,
-                              style:  TextStyle(fontSize: tFormSize,
-                                  color: tTextButtonColor),
-                            ),
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(tBackgroundButtonColor),
-                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
-                                ),
-                              ),
-                              minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
-                            ),
-                          ),
+                        buildCustomButton(
+                          text: tSignUp,
+                          onPressed: _signUpButtonPressed,
+                          backgroundColor: tBackgroundButtonColor,
+                          textColor: tTextButtonColor,
                         ),
                       ],
                     ),

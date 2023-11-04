@@ -38,3 +38,4 @@ const String tGenderUser = "Nam";
 const String tAddressUser = "Tam Kỳ";
 const String tSave = "Save";
 const String tLogout = "Logout";
+const String tProfile = "Profile";

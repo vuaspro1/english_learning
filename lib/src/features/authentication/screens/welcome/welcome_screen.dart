@@ -4,6 +4,7 @@ import 'package:english_learning/src/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../constants/image_strings.dart';
+import '../../../../utils/theme/widget_themes/button_theme.dart';
 import '../home/home.dart';
 import '../signup/signup_screen.dart';
 
@@ -69,7 +70,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double textFieldWidth = MediaQuery.of(context).size.width - 40.0;
     return SafeArea(
       child: Scaffold(
         backgroundColor: tBackGroundColor,
@@ -145,24 +145,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ],
                 ),
                 SizedBox(height: tFormHeight),
-                Container(
-                  width: textFieldWidth, // Đặt chiều rộng của Container bằng với TextField
-                  child: ElevatedButton(
-                    onPressed: _loginButtonPressed,
-                    child:   Text(tLoginTitle,
-                      style: TextStyle(fontSize: tDefaultSize,
-                      color: tTextButtonColor),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(tBackgroundButtonColor),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
-                        ),
-                      ),
-                      minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
-                    ),
-                  ),
+                buildCustomButton(
+                  text: tLoginTitle,
+                  onPressed: _loginButtonPressed,
+                  backgroundColor: tBackgroundButtonColor,
+                  textColor: tTextButtonColor,
                 ),
                 SizedBox(height: tFormHeight-20),
                 Align(
