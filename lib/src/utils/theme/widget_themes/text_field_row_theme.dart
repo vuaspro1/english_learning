@@ -25,7 +25,7 @@ Widget buildTextFieldRow(String label, String value) {
           margin: EdgeInsets.only(left: 20.0),
           child: Text(
             label,
-            style: TextStyle(
+            style: const TextStyle(
               color: tDarkColor,
               fontWeight: FontWeight.bold,
               fontSize: tFontSizeSubTitle,

@@ -22,7 +22,7 @@ const String tPhone = "Phone : ";
 const String tDateOfBirth = "Date of birth : ";
 const String tGender = "Gender : ";
 const String tAddress = "Address : ";
-enum Gender { male, female }
+enum Gender { Male, Female }
 const String tMale = "Male";
 const String tFemale = "Female";
 const String tVerifyPassword = "Verify password";
@@ -30,12 +30,14 @@ const String tVerifyPassword = "Verify password";
 // --Profile Screen Text
 const String tUserNameUser = "user";
 const String tPasswordUser = "user";
-const String tFullNameUser = "Sanh lỏ";
-const String tEmailUser = "sanhlor@gmail.com";
-const String tPhoneUser = "0123456789";
-const String tDateOfBirthUser = "01/02/2002";
-const String tGenderUser = "Nam";
-const String tAddressUser = "Tam Kỳ";
+String tFullNameUser = "Sanh lỏ";
+String tEmailUser = "sanhlor@gmail.com";
+String tPhoneUser = "0123456789";
+String tDateOfBirthUser = "2002-02-01";
+String tGenderUser = "Male";
+String tAddressUser = "Tam Kỳ";
+const String tEdit = "Edit";
 const String tSave = "Save";
 const String tLogout = "Logout";
 const String tProfile = "Profile";
+const String tEditProfile = "EditProfile";

@@ -17,7 +17,7 @@ class SignUpScreen extends StatefulWidget {
 }
 class _SignUpScreenState extends State<SignUpScreen> {
   bool _obscureText = true;
-  Gender? _selectedGender = Gender.male;
+  Gender? _selectedGender = Gender.Male;
   DateTime? _selectedDate;
   bool _obscureVerifyPasswordText = true;
 
@@ -112,7 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ),
                             ),
                             Radio<Gender>(
-                              value: Gender.male,
+                              value: Gender.Male,
                               groupValue: _selectedGender,
                               onChanged: (Gender? value) {
                                 setState(() {
@@ -125,7 +125,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   fontSize: tFormSize
                               ),),
                             Radio<Gender>(
-                              value: Gender.female,
+                              value: Gender.Female,
                               groupValue: _selectedGender,
                               onChanged: (Gender? value) {
                                 setState(() {

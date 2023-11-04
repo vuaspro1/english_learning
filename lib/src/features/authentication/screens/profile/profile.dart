@@ -1,7 +1,9 @@
 import 'package:english_learning/src/constants/colors.dart';
 import 'package:english_learning/src/constants/image_strings.dart';
 import 'package:english_learning/src/constants/text_strings.dart';
+import 'package:english_learning/src/features/authentication/screens/profile/EditProfile.dart';
 import 'package:flutter/material.dart';
+
 
 import '../../../../constants/sizes.dart';
 import '../../../../utils/theme/widget_themes/button_theme.dart';
@@ -34,15 +36,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
             child: Column(
               children: [
-
-               const Text(tProfile, style: TextStyle(
-                  fontSize: tDefaultSize,
-                  color: tDarkColor,
-                 fontWeight: FontWeight.bold,
-                ),
-               textAlign: TextAlign.left,
-               ),
-                const SizedBox(height: tFormHeight-20,),
+               //
+               // const Text(tProfile, style: TextStyle(
+               //    fontSize: tDefaultSize,
+               //    color: tDarkColor,
+               //   fontWeight: FontWeight.bold,
+               //  ),
+               // textAlign: TextAlign.left,
+               // ),
+                const SizedBox(height: tFormHeight,),
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -101,8 +103,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                 const SizedBox(height: tFormHeight - 10),
                 buildCustomButton(
-                  text: tSave,
-                  onPressed: () {},
+                  text: tEdit,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                       return EditProfile();
+                     }),
+                    );
+                  },
                   backgroundColor: tBackgroundButtonColor,
                   textColor: tTextButtonColor,
                 ),
