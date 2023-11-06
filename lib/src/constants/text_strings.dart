@@ -13,6 +13,7 @@ const String tSignUp = "Sign Up";
 const String tError = "Login failed, please try again";
 const String tErrorSubTitle = "Invalid username or password.";
 const String tClose = "OK";
+const String tNo ="No";
 
 // -- Sign Up Screen Text
 const String tSignUpSubTitle = "Please register an account to experience the application";
@@ -41,6 +42,8 @@ const String tSave = "Save";
 const String tLogout = "Logout";
 const String tProfile = "Profile";
 const String tEditProfile = "EditProfile";
+const String tSaveProfile = "You have successfully updated your information";
+const String tExit = "Are you sure you want to exit the application?";
 
 // --Nav Bar Screen
 const String tHome = "Home";

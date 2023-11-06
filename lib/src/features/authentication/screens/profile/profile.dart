@@ -119,16 +119,68 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 buildCustomButton(
                   text: tLogout,
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return WelcomeScreen();
-                      }),
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          icon: Icon(Icons.error,
+                            color: tDarkColor,
+                          ),
+                          title: const Text(tExit),
+                          actions: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) {
+                                    return WelcomeScreen();
+                                  }),
+                                );
+                                //Navigator.of(context).pop(); // Close the error dialog
+                              },
+                              child: const Text(tClose),
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(tErrorColor),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
+                                  ),
+                                ),
+                                // minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 100.0,
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).pop(); // Close the error dialog
+                              },
+                              child: const Text(tNo),
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(tSuccessfullyColor),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
+                                  ),
+                                ),
+                                // minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 30.0,
+                            ),
+                          ],
+                        );
+                      },
                     );
+
                   },
                   backgroundColor: tLogoutButtonColor,
                   textColor: tLogoutTextColor,
                 ),
+
+
               ],
             ),
           ),

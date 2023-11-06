@@ -40,7 +40,7 @@ class _EditProfileState extends State<EditProfile> {
               },
             ),
         ),
-        body: Center(
+        body: SingleChildScrollView(
           child: Container(
             width: double.infinity,
             decoration: const BoxDecoration(
@@ -224,14 +224,41 @@ class _EditProfileState extends State<EditProfile> {
                 buildCustomButton(
                   text: tSave,
                   onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          icon: const Icon(Icons.check,
+                            color: tSuccessfullyColor,
+                          ),
+                          title: const Text(tSaveProfile),
+                          actions: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) {
+                                    return const ProfileScreen();
 
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return const ProfileScreen();
-
-                      }),
+                                  }),
+                                ); // Close the error dialog
+                              },
+                              child: const Text(tClose),
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(tSuccessfullyColor),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
+                                  ),
+                                ),
+                                // minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
                     );
+
                     tGenderUser = _selectedGender.toString().split('.')[1];
                   },
                   backgroundColor: tBackgroundButtonColor,
