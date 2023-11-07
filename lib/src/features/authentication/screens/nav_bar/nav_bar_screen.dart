@@ -6,12 +6,15 @@ import '../home/home.dart';
 import '../profile/profile.dart';
 
 class NavBarScreen extends StatefulWidget {
+  final int initialPageIndex;
+  NavBarScreen({Key? key, this.initialPageIndex = 0}) : super(key: key);
   @override
-  _NavBarScreenState createState() => _NavBarScreenState();
+  _NavBarScreenState createState() => _NavBarScreenState(initialPageIndex);
 }
 
 class _NavBarScreenState extends State<NavBarScreen> {
   int currentIndex = 0;
+  _NavBarScreenState(this.currentIndex);
   final List<Widget> screens = [HomeScreen(), ProfileScreen()];
 
   @override

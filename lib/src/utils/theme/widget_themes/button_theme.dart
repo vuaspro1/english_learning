@@ -19,7 +19,7 @@ Widget buildCustomButton({
             borderRadius: BorderRadius.circular(tBorderRadiusCircular),
           ),
         ),
-        minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
+        minimumSize: MaterialStateProperty.all(const Size(300.0, 50.0)),
       ),
       child: Text(
         text,

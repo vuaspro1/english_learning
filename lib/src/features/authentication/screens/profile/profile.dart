@@ -36,15 +36,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
             child: Column(
               children: [
-               //
-               // const Text(tProfile, style: TextStyle(
-               //    fontSize: tDefaultSize,
-               //    color: tDarkColor,
-               //   fontWeight: FontWeight.bold,
-               //  ),
-               // textAlign: TextAlign.left,
-               // ),
-               //  const SizedBox(height: tFormHeight,),
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -60,31 +51,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],// Đặt BorderRadius cho Container ngoài cùng
                 ),
-                child: Container(
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 20.0),
-                        child: ClipOval(
-                          child: Container(
-                            width: 70.0, // Đặt chiều rộng của hình ảnh
-                            height: 70.0, // Đặt chiều cao của hình ảnh
-                            child: Image.asset(tavt), // Sử dụng Image.asset với đường dẫn hình ảnh
-                          ),),
-                      ),
+                child: Row(
+                  children: [
                     Container(
-                      margin: EdgeInsets.only(left: 20.0), // Khoảng cách 10.0 giữa hình ảnh và văn bản
-                      child: const Text(
-                        tUserName,
-                        style: TextStyle(
-                          color: tDarkColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: tFormSize,
-                        ),
+                      margin: const EdgeInsets.only(left: 20.0),
+                      child: ClipOval(
+                        child: SizedBox(
+                          width: 70.0, // Đặt chiều rộng của hình ảnh
+                          height: 70.0, // Đặt chiều cao của hình ảnh
+                          child: Image.asset(tavt), // Sử dụng Image.asset với đường dẫn hình ảnh
+                        ),),
+                    ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 20.0), // Khoảng cách 10.0 giữa hình ảnh và văn bản
+                    child: const Text(
+                      tUserName,
+                      style: TextStyle(
+                        color: tDarkColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: tFormSize,
                       ),
                     ),
-                    ],
                   ),
+                  ],
                 ),
               ),
 
@@ -108,7 +97,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) {
-                       return EditProfile();
+                       return const EditProfile();
                      }),
                     );
                   },
@@ -123,64 +112,49 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       context: context,
                       builder: (context) {
                         return AlertDialog(
-                          icon: Icon(Icons.error,
+                          icon: const Icon(Icons.error,
                             color: tDarkColor,
                           ),
                           title: const Text(tExit),
-                          actions: [
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) {
-                                    return WelcomeScreen();
-                                  }),
-                                );
-                                //Navigator.of(context).pop(); // Close the error dialog
-                              },
-                              child: const Text(tClose),
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(tErrorColor),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
-                                  ),
+
+                          content: Row(
+                            children: [
+                              Expanded(
+                                child: buildCustomButton(
+                                  text: tClose,
+                                  onPressed: () {
+                                    // Xử lý đăng xuất ở đây
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) {
+                                        return const WelcomeScreen();
+                                      }),
+                                    );
+                                  },
+                                  backgroundColor: tErrorColor,
+                                  textColor: tTextFieldBackgroundColor,
                                 ),
-                                // minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
                               ),
-                            ),
-                            const SizedBox(
-                              width: 100.0,
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.of(context).pop(); // Close the error dialog
-                              },
-                              child: const Text(tNo),
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(tSuccessfullyColor),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
-                                  ),
+                              const SizedBox(width: 16.0), // Khoảng cách giữa nút "Yes" và "No"
+                              Expanded(
+                                child: buildCustomButton(
+                                  text: tNo,
+                                  onPressed: () {
+                                    Navigator.of(context).pop(); // Đóng hộp thoại lỗi
+                                  },
+                                  backgroundColor: tSuccessfullyColor,
+                                  textColor: tTextFieldBackgroundColor,
                                 ),
-                                // minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
                               ),
-                            ),
-                            const SizedBox(
-                              width: 30.0,
-                            ),
-                          ],
+                            ],
+                          ),
                         );
                       },
                     );
-
                   },
                   backgroundColor: tLogoutButtonColor,
                   textColor: tLogoutTextColor,
                 ),
-
-
               ],
             ),
           ),

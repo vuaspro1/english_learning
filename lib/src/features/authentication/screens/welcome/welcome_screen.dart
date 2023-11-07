@@ -32,25 +32,18 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            icon: Icon(Icons.error,
+            icon: const Icon(Icons.error,
               color: tErrorColor,
             ),
             title: const Text(tError),
             actions: [
-              ElevatedButton(
+              buildCustomButton(
+                text: tClose,
                 onPressed: () {
-                  Navigator.of(context).pop(); // Close the error dialog
+                  Navigator.of(context).pop();
                 },
-                child: const Text(tClose),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(tErrorColor),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(tBorderRadiusCircular), // Đặt bán kính cong
-                    ),
-                  ),
-                  // minimumSize: MaterialStateProperty.all(Size(300.0, 50.0)),
-                ),
+                backgroundColor: tErrorColor,
+                textColor: tTextFieldBackgroundColor,
               ),
             ],
           );

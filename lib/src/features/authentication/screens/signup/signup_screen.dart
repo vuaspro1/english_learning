@@ -3,14 +3,12 @@ import 'package:english_learning/src/constants/sizes.dart';
 import 'package:english_learning/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:english_learning/src/utils/theme/widget_themes/text_field_theme.dart';
 import 'package:flutter/material.dart';
-import 'dart:io';
-
 import '../../../../constants/image_strings.dart';
 import '../../../../constants/text_strings.dart';
 import '../../../../utils/theme/widget_themes/button_theme.dart';
 
 class SignUpScreen extends StatefulWidget {
-  SignUpScreen({super.key});
+  const SignUpScreen({super.key});
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
@@ -26,21 +24,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(tSignUp,
+          title: const Text(tSignUp,
           style: TextStyle(
             fontSize: tDefaultSize,
           ),), // Đặt tiêu đề cho màn hình
-          leading: Platform.isIOS // Kiểm tra nền tảng
-              ? Container() // Ở iOS, không hiển thị nút "Back"
-              : IconButton(
-            icon: Icon(Icons.arrow_back), // Icon "Back"
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back), // Sử dụng biểu tượng mũi tên quay lại
             onPressed: () {
-              Navigator.pop(context); // Quay trở lại trang trước
+              Navigator.pop(context);
             },
           ),
         ),
         backgroundColor: tBackGroundColor,
-        body: Center(
+        body: SingleChildScrollView(
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -60,7 +56,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         TextFormField(
                           decoration: TTextFormFieldTheme.inputDecoration(
                             labelText: tFullName,
-                            prefixIcon: Icon(Icons.person_outline_rounded)
+                            prefixIcon: const Icon(Icons.person_outline_rounded)
 
                           )
                         ),
@@ -68,28 +64,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         TextFormField(
                           decoration: TTextFormFieldTheme.inputDecoration(
                             labelText: tEmail,
-                            prefixIcon: Icon(Icons.email_outlined)
+                            prefixIcon: const Icon(Icons.email_outlined)
                           ),
                         ),
                         const SizedBox(height: tFormHeight-10,),
                         TextFormField(
                           decoration: TTextFormFieldTheme.inputDecoration(
                             labelText: tPhone,
-                            prefixIcon: Icon(Icons.phone)
+                            prefixIcon: const Icon(Icons.phone)
                           )
                         ),
                         const SizedBox(height: tFormHeight-10,),
                         TextFormField(
                           decoration: TTextFormFieldTheme.inputDecoration(
                             labelText: tAddress,
-                            prefixIcon: Icon(Icons.add_location_alt_rounded)
+                            prefixIcon: const Icon(Icons.add_location_alt_rounded)
                           )
                         ),
                         const SizedBox(height: tFormHeight -10),
                         TextFormField(
                           decoration: TTextFormFieldTheme.inputDecoration(
                             labelText: tDateOfBirth,
-                            prefixIcon: Icon(Icons.date_range),
+                            prefixIcon: const Icon(Icons.date_range),
                           ),
                           onTap: () {
                             _selectDate(context);
@@ -104,7 +100,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         const SizedBox(height: tFormHeight -10),
                         Row(
                           children: <Widget>[
-                            Text(
+                            const Text(
                               tGender, // Label for gender
                               style: TextStyle(
                                 fontSize: tFormSize,
@@ -120,7 +116,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 });
                               },
                             ),
-                            Text(tMale,
+                            const Text(tMale,
                               style: TextStyle(
                                   fontSize: tFormSize
                               ),),
@@ -133,7 +129,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 });
                               },
                             ),
-                            Text(tFemale,
+                            const Text(tFemale,
                               style: TextStyle(
                                   fontSize: tFormSize),
                             ),
@@ -143,10 +139,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         TextFormField(
                             decoration: TTextFormFieldTheme.inputDecoration(
                                 labelText: tUserName,
-                                prefixIcon: Icon(Icons.person)
+                                prefixIcon: const Icon(Icons.person)
                             )
                         ),
-                        SizedBox(height: tFormHeight -10),
+                        const SizedBox(height: tFormHeight -10),
                         Stack(
                           alignment: Alignment.centerRight,
                           children: [
@@ -154,7 +150,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               obscureText: _obscureText,
                               decoration: TTextFormFieldTheme.inputDecoration(
                                 labelText: tPassword,
-                                prefixIcon: Icon(Icons.password),
+                                prefixIcon: const Icon(Icons.password),
                               ),
                             ),
                             IconButton(
@@ -167,7 +163,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ),
                           ],
                         ),
-                        SizedBox(height: tFormHeight -10),
+                        const SizedBox(height: tFormHeight -10),
                         Stack(
                           alignment: Alignment.centerRight,
                           children: [
@@ -175,7 +171,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               obscureText: _obscureVerifyPasswordText,
                               decoration: TTextFormFieldTheme.inputDecoration(
                                 labelText: tVerifyPassword,
-                                prefixIcon: Icon(Icons.password),
+                                prefixIcon: const Icon(Icons.password),
                               ),
                             ),
                             IconButton(
@@ -188,7 +184,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ),
                           ],
                         ),
-                        SizedBox(height: tFormHeight),
+                        const SizedBox(height: tFormHeight),
                         buildCustomButton(
                           text: tSignUp,
                           onPressed: _signUpButtonPressed,
