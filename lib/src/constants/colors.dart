@@ -15,4 +15,9 @@ const tBackgroundButtonColor = Color(0xFFCBF4F9);
 const tLogoutButtonColor = Color(0xFFEAD4D6) ;
 const tLogoutTextColor = Color(0xFFFD0F01);
 const tErrorColor = Color(0xFFFD0F01);
+
+//home
+const tBoxDecoration =Color(0xFF8AEAE9);
+const tStart =Color(0xDD000000);
+const tviewtabbar = Color(0xFFF5F3FF);
 const tSuccessfullyColor = Color(0xFF189409);

@@ -31,10 +31,10 @@ const String tVerifyPassword = "Verify password";
 // --Profile Screen Text
 const String tUserNameUser = "user";
 const String tPasswordUser = "user";
-String tFullNameUser = "Sanh lỏ";
+String tFullNameUser = "Sanh đẹp trai";
 String tEmailUser = "sanhlor@gmail.com";
 String tPhoneUser = "0123456789";
-String tDateOfBirthUser = "2002-02-01";
+String tDateOfBirthUser = "2002-11-09";
 String tGenderUser = "Male";
 String tAddressUser = "Tam Kỳ";
 const String tEdit = "Edit";
@@ -46,4 +46,13 @@ const String tSaveProfile = "You have successfully updated your information";
 const String tExit = "Are you sure you want to exit the application?";
 
 // --Nav Bar Screen
+const String ttopic = "Topics";
+const String tsearch = "Search";
 const String tHome = "Home";
+//--home screen text
+const String twelcome = "Welcome back";
+const String tlearning_english="Learning English";
+const String talltopics = "All Topics";
+const String tyourtopics = "Your Topics";
+const String trecently = "Recently added";
+const String tpractice = "Best Practice";
