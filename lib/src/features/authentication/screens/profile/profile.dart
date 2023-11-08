@@ -51,30 +51,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],// Đặt BorderRadius cho Container ngoài cùng
                 ),
-                child: Row(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(left: 20.0),
-                      child: ClipOval(
-                        child: SizedBox(
-                          width: 70.0, // Đặt chiều rộng của hình ảnh
-                          height: 70.0, // Đặt chiều cao của hình ảnh
-                          child: Image.asset(tavt), // Sử dụng Image.asset với đường dẫn hình ảnh
-                        ),),
-                    ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 20.0), // Khoảng cách 10.0 giữa hình ảnh và văn bản
-                    child: const Text(
-                      tUserName,
-                      style: TextStyle(
-                        color: tDarkColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: tFormSize,
-                      ),
+                  child: Container(
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 20.0),
+                          child: ClipOval(
+                            child: Container(
+                              width: 70.0, // Đặt chiều rộng của hình ảnh
+                              height: 70.0, // Đặt chiều cao của hình ảnh
+                              child: Image.asset(tavt), // Sử dụng Image.asset với đường dẫn hình ảnh
+                            ),),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 20.0), // Khoảng cách 10.0 giữa hình ảnh và văn bản
+                          child: const Text(
+                            tUserName,
+                            style: TextStyle(
+                              color: tDarkColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: tFormSize,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  ],
-                ),
               ),
 
                 const SizedBox(height: tFormHeight - 10),
