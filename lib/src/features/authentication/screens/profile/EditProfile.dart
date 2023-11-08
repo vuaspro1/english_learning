@@ -229,7 +229,7 @@ class _EditProfileState extends State<EditProfile> {
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(builder: (context) {
-                                          return NavBarScreen(initialPageIndex: 1); // Chuyển hướng đến ProfileScreen và vẫn có NavBarScreen
+                                          return NavBarScreen(initialPageIndex: 3); // Chuyển hướng đến ProfileScreen và vẫn có NavBarScreen
                                         }),
                                       );
                                     },
