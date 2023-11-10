@@ -229,7 +229,7 @@ class _EditProfileState extends State<EditProfile> {
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(builder: (context) {
-                                          return NavBarScreen(initialPageIndex: 3); // Chuyển hướng đến ProfileScreen và vẫn có NavBarScreen
+                                          return NavBarScreen(initialPageIndex: 2); // Chuyển hướng đến ProfileScreen và vẫn có NavBarScreen
                                         }),
                                       );
                                     },
@@ -240,7 +240,6 @@ class _EditProfileState extends State<EditProfile> {
                               );
                             },
                           );
-
                           tGenderUser = _selectedGender.toString().split('.')[1];
                         },
                         backgroundColor: tBackgroundButtonColor,

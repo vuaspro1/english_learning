@@ -1,6 +1,5 @@
 import 'package:english_learning/src/constants/sizes.dart';
 import 'package:english_learning/src/constants/text_strings.dart';
-import 'package:english_learning/src/features/authentication/screens/search/search.dart';
 import 'package:english_learning/src/features/authentication/screens/topic/topic.dart';
 import 'package:flutter/material.dart';
 import '../../../../constants/colors.dart';
@@ -17,7 +16,7 @@ class NavBarScreen extends StatefulWidget {
 class _NavBarScreenState extends State<NavBarScreen> {
   int currentIndex = 0;
   _NavBarScreenState(this.currentIndex);
-  final List<Widget> screens = [HomeScreen(),SearchScreen(),TopicScreen(), ProfileScreen()];
+  final List<Widget> screens = [HomeScreen(),TopicScreen(), ProfileScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +41,6 @@ class _NavBarScreenState extends State<NavBarScreen> {
           },
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: tHome),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: tsearch),
             BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: ttopic),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: tProfile),
           ],
