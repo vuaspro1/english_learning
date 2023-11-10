@@ -1,8 +1,10 @@
 import 'package:english_learning/src/constants/colors.dart';
 import 'package:english_learning/src/constants/sizes.dart';
 import 'package:english_learning/src/constants/text_strings.dart';
+import 'package:english_learning/src/features/authentication/screens/forgotpassword/phone_pw.dart';
 import 'package:english_learning/src/features/authentication/screens/nav_bar/nav_bar_screen.dart';
 import 'package:flutter/material.dart';
+
 
 import '../../../../constants/image_strings.dart';
 import '../../../../utils/theme/widget_themes/button_theme.dart';
@@ -152,7 +154,51 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     children: [
                       TextButton(
                         onPressed: () {
+                          // showModalBottomSheet(
+                          //   context: context,
+                          //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+                          //   builder: (context) => Container(
+                          //     padding: const EdgeInsets.all(40), // Reduce padding here
+                          //     child: Column(
+                          //       crossAxisAlignment: CrossAxisAlignment.start,
+                          //       children: [
+                          //         Text(tResetSubtitle, style: Theme.of(context).textTheme.headline5),
+                          //         const SizedBox(height: 20), // Reduce the height between the title and the container
+                          //         Container(
+                          //           padding: EdgeInsets.all(10.0), // Reduce padding here
+                          //           decoration: BoxDecoration(
+                          //             borderRadius: BorderRadius.circular(10.0),
+                          //             color: Colors.grey.shade200,
+                          //           ),
+                          //           child: Row(
+                          //             children: [
+                          //               const Icon(Icons.mail_outline_rounded, size: 40.0), // Reduce icon size
+                          //               SizedBox(width: 10), // Add some space between icon and text
+                          //               TextButton(
+                          //                 onPressed: () {
+                          //                   Navigator.push(
+                          //                     context,
+                          //                     MaterialPageRoute(builder: (context) => Phonepassword()),
+                          //                   );
+                          //                 },
+                          //                 child: Text(
+                          //                   'E-Mail',
+                          //                   style: Theme.of(context).textTheme.headline6,
+                          //                 ),
+                          //               ),
+                          //             ],
+                          //           ),
+                          //         ),
+                          //       ],
+                          //     ),
+                          //   ),
+                          // );
+
                           // Xử lý khi liên kết "Forgot Password" được nhấn
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Phonepassword()),
+                          );
                         },
                         child: const Text(
                           tForgetPassword,
