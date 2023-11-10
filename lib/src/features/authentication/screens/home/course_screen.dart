@@ -1,7 +1,7 @@
 import 'package:english_learning/src/constants/image_strings.dart';
 import 'package:english_learning/src/constants/sizes.dart';
 import 'package:english_learning/src/constants/text_strings.dart';
-import 'package:english_learning/src/features/authentication/screens/test/test.dart';
+import 'package:english_learning/src/features/authentication/screens/test/test_page.dart';
 import 'package:english_learning/src/utils/theme/widget_themes/button_theme.dart';
 import 'package:flutter/material.dart';
 import '../../../../constants/colors.dart';
@@ -16,12 +16,12 @@ class CourseScreen extends StatefulWidget {
 class _CourseScreenState extends State<CourseScreen> {
   final Map<String, List<Map<String, dynamic>>> _vocabularyMap = {
     'Yourself': [
-      {'id': 1, 'name': 'Ancestor', 'mean': '(n). Tổ tiên'},
-      {'id': 2, 'name': 'agreement  (n)', 'mean': '/əˈɡriː.mənt/. Sự thỏa thuận'},
+      {'id': 1, 'name': 'Ancestor', 'mean': '👎. Tổ tiên'},
+      {'id': 2, 'name': 'agreement  👎', 'mean': '/əˈɡriː.mənt/. Sự thỏa thuận'},
       {'id': 3, 'name': 'specific  (adj)', 'mean': '/spəˈsɪf.ɪk/. Cụ thể'},
       {'id': 4, 'name': 'abide by  (v)', 'mean': '/əˈbaɪd baɪ/. Tuân theo'},
-      {'id': 5, 'name': '	market  (n)', 'mean': '/ˈmɑːrkɪt/. Thị trường'},
-      {'id': 6, 'name': 'persuasion  (n)', 'mean': '/pɚˈsweɪ.ʒən/. Sự thuyết phục'},
+      {'id': 5, 'name': '	market  👎', 'mean': '/ˈmɑːrkɪt/. Thị trường'},
+      {'id': 6, 'name': 'persuasion  👎', 'mean': '/pɚˈsweɪ.ʒən/. Sự thuyết phục'},
       {'id': 7, 'name': 'consume  (v)', 'mean': '/kən’sju:m/. Tiêu thụ'},
       {'id': 8, 'name': 'establish  (v)', 'mean': '/ɪˈstæblɪʃ/. Thành lập'},
       {'id': 9, 'name': 'resolve  (v)', 'mean': '/rɪˈzɔːlv/. Giải quyết'},
@@ -29,10 +29,10 @@ class _CourseScreenState extends State<CourseScreen> {
     ],
     'Holidays': [
       {'id': 1, 'name': 'Airline schedule', 'mean': 'ˈeəlaɪn ˈʃedjuːl. lịch bay'},
-      {'id': 2, 'name': 'Check-in  (n)', 'mean': '/tʃek – ɪn/. 	giấy tờ vào cửa'},
+      {'id': 2, 'name': 'Check-in  👎', 'mean': '/tʃek – ɪn/. 	giấy tờ vào cửa'},
       {'id': 3, 'name': 'High season  (adj)', 'mean': '/haɪ ˈsiːzn/. 	Mùa cao điểm'},
       {'id': 4, 'name': 'Itinerary (v)', 'mean': '/	aɪˈtɪnərəri/. Lịch trình'},
-      {'id': 5, 'name': '	Destination  (n)', 'mean': '/desti’neiʃn/. Điểm đến'},
+      {'id': 5, 'name': '	Destination  👎', 'mean': '/desti’neiʃn/. Điểm đến'},
     ],
     'Sports': [
       {'id': 1, 'name': 'Canoeing', 'mean': '/kəˈnuː.ɪŋ/. Chèo thuyền ca-nô'},
@@ -89,21 +89,21 @@ class _CourseScreenState extends State<CourseScreen> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-            widget.imglist,
+          widget.imglist,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
             letterSpacing: 1,
           ),
         ),
       ),
-        body: Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(tBackground),
-                fit: BoxFit.cover,
-              )
-          ),
-          child: Padding(
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(tBackground),
+              fit: BoxFit.cover,
+            )
+        ),
+        child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
@@ -185,7 +185,7 @@ class _CourseScreenState extends State<CourseScreen> {
                   },
                 )
                     : const Center(
-                      child: Text('Nothing Found'),
+                  child: Text('Nothing Found'),
                 ),
               ),
               const SizedBox(height: tFormHeight - 10),
@@ -195,7 +195,7 @@ class _CourseScreenState extends State<CourseScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) {
-                      return const TestScreen();
+                      return const Learning();
                     }),
                   );
                 },
@@ -204,8 +204,8 @@ class _CourseScreenState extends State<CourseScreen> {
               ),
             ],
           ),
-      ),
         ),
+      ),
     );
   }
 }
