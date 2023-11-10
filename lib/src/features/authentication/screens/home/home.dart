@@ -5,6 +5,11 @@ import 'package:english_learning/src/features/authentication/screens/home/course
 import 'package:flutter/material.dart';
 import '../../../../constants/colors.dart';
 import '../nav_bar/nav_bar_screen.dart';
+import '../test/models/test_category.dart';
+import '../test/take_test.dart';
+import '../test/test_page.dart';
+import '../test/utils/const.dart';
+import '../test/widgets/test_container.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -176,8 +181,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
                                           padding: const EdgeInsets.all(10),
                                           child: Image.asset(
                                             "assets/images/${imglist[index]}.png",
-                                            width: 100,
-                                            height: 100,
+                                            width: double.infinity,
+                                            height: 100, // Adjust this value as needed
+                                            fit: BoxFit.contain,
                                           ),
                                         ),
                                         const SizedBox(height: 10),
@@ -198,7 +204,30 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
                           ),
                           const Text("I"),
                           const Text("hi"),
-                          const Text("sanh"),
+                          Expanded(
+                            child: GridView(
+                        padding: EdgeInsets.symmetric(
+                              horizontal: getWidth(context)*0.02,
+                              vertical: getHeight(context)*0.02
+                        ),
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 23,
+                              mainAxisSpacing: 23,
+                              childAspectRatio: 2/1
+                        ),
+                        children: testData.map((item) => InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const TakeTest() ,)
+                              );
+                            },
+                            child: TestContainer(item.id, item.title),
+                        )).toList(),
+
+                      ),
+                          ),
                         ],
                       ),
                     ),
@@ -211,3 +240,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
     );
   }
 }
+
+
+const testData = [
+TestCategory('1', 'Test 1'),
+TestCategory('2', 'Test 2'),
+TestCategory('3', 'Test 3'),
+TestCategory('4', 'Test 4'),
+TestCategory('5', 'Test 5'),
+TestCategory('6', 'Test 6'),
+TestCategory('1', 'Test 7'),
+TestCategory('2', 'Test 8'),
+  TestCategory('5', 'Test 5'),
+  TestCategory('6', 'Test 6'),
+  TestCategory('1', 'Test 7'),
+  TestCategory('2', 'Test 8')
+];
