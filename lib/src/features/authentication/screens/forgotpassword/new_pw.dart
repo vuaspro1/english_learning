@@ -80,7 +80,16 @@ class _NewpwState extends State<Newpw> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: tBackGroundColor,
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back), // Sử dụng biểu tượng mũi tên quay lại
+            onPressed: () {
+              // Xử lý sự kiện khi người dùng nhấn biểu tượng
+              // Điều hướng đến trang khác ở đây
+              Navigator.pop(context);
+            },
+          ),
+        ),
         body: Center(
           child: Container(
             decoration: const BoxDecoration(
