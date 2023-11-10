@@ -92,16 +92,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
                               fontSize: tFontTextButton,
                             ),
                           ),
-                          // ElevatedButton(
-                          //   onPressed: onPressed,
-                          //   style: ElevatedButton.styleFrom(
-                          //     backgroundColor: tTextButtonColor, // Màu nền của nút
-                          //     shape: RoundedRectangleBorder(
-                          //       borderRadius: BorderRadius.circular(10.0), // Đặt `borderRadius` tại đây
-                          //     ),
-                          //   ),
-                            // child: const Text("Start", style: TextStyle(color: tDarkColor)), // Đổi màu văn bản
-                          // ),
+                          ElevatedButton(
+                            onPressed: onPressed,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: tTextButtonColor, // Màu nền của nút
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0), // Đặt borderRadius tại đây
+                              ),
+                            ),
+                            child: const Text("Start", style: TextStyle(color: tDarkColor)), // Đổi màu văn bản
+                          ),
                         ],
                       ),
                       Image.asset(
@@ -152,8 +152,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
                               return InkWell(
                                 onTap: (){
                                   Navigator.push(context, MaterialPageRoute(
-                                      builder: (context)=>
-                                          CourseScreen(imglist[index]),));
+                                    builder: (context)=>
+                                        CourseScreen(imglist[index]),));
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
