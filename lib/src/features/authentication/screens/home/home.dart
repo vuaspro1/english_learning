@@ -181,9 +181,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
                                           padding: const EdgeInsets.all(10),
                                           child: Image.asset(
                                             "assets/images/${imglist[index]}.png",
-                                            width: double.infinity,
-                                            height: 100, // Adjust this value as needed
-                                            fit: BoxFit.contain,
+                                            width: 100,
+                                            height: 100,
                                           ),
                                         ),
                                         const SizedBox(height: 10),
@@ -250,9 +249,5 @@ TestCategory('4', 'Test 4'),
 TestCategory('5', 'Test 5'),
 TestCategory('6', 'Test 6'),
 TestCategory('1', 'Test 7'),
-TestCategory('2', 'Test 8'),
-  TestCategory('5', 'Test 5'),
-  TestCategory('6', 'Test 6'),
-  TestCategory('1', 'Test 7'),
-  TestCategory('2', 'Test 8')
+TestCategory('2', 'Test 8')
 ];
