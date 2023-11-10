@@ -20,8 +20,22 @@ class WelcomeScreen extends StatefulWidget{
 class _WelcomeScreenState extends State<WelcomeScreen> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  var _userInvalid = false;
+  var _passInvalid = false;
   bool _obscureText = true;
   void _loginButtonPressed(){
+    setState(() {
+      if(_usernameController.text.isEmpty){
+        _userInvalid = true;
+      } else {
+        _userInvalid = true;
+      }
+      if(_passwordController.text.isEmpty){
+        _passInvalid = true;
+      } else {
+        _passInvalid = true;
+      }
+    });
     if (_usernameController.text == tUserNameUser && _passwordController.text == tPasswordUser) {
       // If the username and password are "admin", navigate to the HomeScreen
       Navigator.pushReplacement(
@@ -109,6 +123,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       borderRadius: BorderRadius.circular(tBorderRadiusCircular),
                     ),
                     labelText: tUserName,
+                    errorText: _userInvalid ? tErrorUserText : null,
                     filled: true,
                     fillColor: tTextFieldBackgroundColor,
                   ),
@@ -125,6 +140,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           borderRadius: BorderRadius.circular(tBorderRadiusCircular),
                         ),
                         labelText: tPassword,
+                        errorText: _passInvalid ? tErrorPassText : null,
                         filled: true,
                         fillColor: tTextFieldBackgroundColor,
                       ),
@@ -154,47 +170,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     children: [
                       TextButton(
                         onPressed: () {
-                          // showModalBottomSheet(
-                          //   context: context,
-                          //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
-                          //   builder: (context) => Container(
-                          //     padding: const EdgeInsets.all(40), // Reduce padding here
-                          //     child: Column(
-                          //       crossAxisAlignment: CrossAxisAlignment.start,
-                          //       children: [
-                          //         Text(tResetSubtitle, style: Theme.of(context).textTheme.headline5),
-                          //         const SizedBox(height: 20), // Reduce the height between the title and the container
-                          //         Container(
-                          //           padding: EdgeInsets.all(10.0), // Reduce padding here
-                          //           decoration: BoxDecoration(
-                          //             borderRadius: BorderRadius.circular(10.0),
-                          //             color: Colors.grey.shade200,
-                          //           ),
-                          //           child: Row(
-                          //             children: [
-                          //               const Icon(Icons.mail_outline_rounded, size: 40.0), // Reduce icon size
-                          //               SizedBox(width: 10), // Add some space between icon and text
-                          //               TextButton(
-                          //                 onPressed: () {
-                          //                   Navigator.push(
-                          //                     context,
-                          //                     MaterialPageRoute(builder: (context) => Phonepassword()),
-                          //                   );
-                          //                 },
-                          //                 child: Text(
-                          //                   'E-Mail',
-                          //                   style: Theme.of(context).textTheme.headline6,
-                          //                 ),
-                          //               ),
-                          //             ],
-                          //           ),
-                          //         ),
-                          //       ],
-                          //     ),
-                          //   ),
-                          // );
-
-                          // Xử lý khi liên kết "Forgot Password" được nhấn
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Phonepassword()),
