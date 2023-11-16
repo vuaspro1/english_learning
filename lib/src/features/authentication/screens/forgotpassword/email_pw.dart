@@ -14,8 +14,25 @@ class Phonepassword extends StatefulWidget {
 }
 
 class _PhonepasswordState extends State<Phonepassword> {
+  final TextEditingController _emailController = TextEditingController();
+  final _formField = GlobalKey<FormState>();
+  var _emailInvalid = false;
 
-
+  void _onEmailClicked(){
+    setState(() {
+      if (_emailController.text.isEmpty || !_emailController.text.contains("@")){
+        _emailInvalid = true;
+      } else {
+        _emailInvalid = false;
+      }
+      if (!_emailInvalid){
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => CodeOTP()),
+        );
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -40,6 +57,7 @@ class _PhonepasswordState extends State<Phonepassword> {
           ),
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child:  Column(
+              key: _formField,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -63,20 +81,18 @@ class _PhonepasswordState extends State<Phonepassword> {
               ),
               const SizedBox( height: 50, ),
                 TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  controller: _emailController,
                   decoration: TTextFormFieldTheme.inputDecoration(
                     labelText: tEmailpw,
-                    prefixIcon: Icon(Icons.phone_android)
+                    errorText : _emailInvalid ? tErrorMail: null,
+                    prefixIcon: Icon(Icons.email_outlined),
                   ),
                 ),
-              SizedBox(height: tFormHeight),
+                SizedBox(height: tFormHeight),
               buildCustomButton(
                 text: tButtonphone,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CodeOTP()),
-                  );
-                },
+                onPressed: _onEmailClicked,
                 backgroundColor: tBackgroundButtonColor,
                 textColor: tTextButtonColor,
               ),

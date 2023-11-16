@@ -23,7 +23,6 @@ class _CodeOTPState extends State<CodeOTP> {
             leading: IconButton(
               icon: const Icon(Icons.arrow_back), // Sử dụng biểu tượng mũi tên quay lại
               onPressed: () {
-                // Xử lý sự kiện khi người dùng nhấn biểu tượng
                 // Điều hướng đến trang khác ở đây
                 Navigator.pop(context);
               },
@@ -58,8 +57,7 @@ class _CodeOTPState extends State<CodeOTP> {
               ),
                 const SizedBox(height: tFormHeight,),
                 OtpTextField(
-                  numberOfFields: 6,
-                  borderColor: Colors.black,
+                  focusedBorderColor: Colors.black,
                   filled: true,
                   fillColor: Colors.white,
                 ),

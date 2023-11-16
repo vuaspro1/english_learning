@@ -1,7 +1,7 @@
 import 'package:english_learning/src/constants/colors.dart';
 import 'package:english_learning/src/constants/sizes.dart';
 import 'package:english_learning/src/constants/text_strings.dart';
-import 'package:english_learning/src/features/authentication/screens/forgotpassword/phone_pw.dart';
+import 'package:english_learning/src/features/authentication/screens/forgotpassword/email_pw.dart';
 import 'package:english_learning/src/features/authentication/screens/nav_bar/nav_bar_screen.dart';
 import 'package:flutter/material.dart';
 

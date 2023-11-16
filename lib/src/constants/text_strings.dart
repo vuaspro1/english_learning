@@ -19,17 +19,25 @@ const String tNo ="Cancel";
 const String tResetSubtitle =" Select option given below to reset your password";
 const String tResetEmail = "Reset via Email Verification";
 const String tForgottitle = "Change Password";
+
+// Email Screen Text
+const String tErrorMail = "Enter Email";
 const String tEmailSubTitle = "Enter your email to change your password";
 const String tEmailpw = " Email";
 const String tButtonphone = "Send Code";
+// Code Screen Text
 const String tCodeSubTitle ='Enter the code sent to your email';
 const String tCodepw = 'Enter OTP';
 const String tButtoncode = 'Confirm';
+// New Password Text
 const String tNewpwSubtitle= "Please enter your password so we can update it";
 const String tNewpw = 'A new password';
 const String tConfirmpw = 'Confirm password';
 const String tCheckpw = "Changed password successfully";
 const String tErrorpw = "Changed password failed";
+const String tButtonNew = "Change password";
+const String tErrorNew = "Enter Password";
+
 // -- Sign Up Screen Text
 const String tSignUpSubTitle = "Please register an account to experience the application";
 const String tFullName = "Full Name : ";

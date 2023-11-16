@@ -5,12 +5,14 @@ class TTextFormFieldTheme {
   static InputDecoration inputDecoration({
     String? labelText , // Giá trị mặc định cho labelText
     Icon? prefixIcon,
+    String? errorText,
   }) {
     return InputDecoration(
       labelText: labelText,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
+      errorText: errorText,
       prefixIcon: prefixIcon,
       labelStyle: TextStyle(color: tSecondaryColor),
       filled: true,

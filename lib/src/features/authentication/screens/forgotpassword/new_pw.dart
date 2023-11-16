@@ -18,63 +18,68 @@ class _NewpwState extends State<Newpw> {
   final TextEditingController _confirmPasswordController = TextEditingController();
   bool _obscureText = true;
   bool _obscureConfirmpass = true;
+  var _newInvalid = false;
+
 
   void _onSubmit() {
-    if (_newPasswordController.text == _confirmPasswordController.text) {
-      // Password và Confirm Password khớp nhau
-      showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            icon: const Icon(
-              Icons.check_circle,
-              color: tCheckColor,
-            ),
-            title: const Text(tCheckpw),
-            actions: [
-              buildCustomButtonPopUp(
-                text: tClose,
-                onPressed: () {
-                  Navigator.of(context).pop(); // Close the current dialog
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => WelcomeScreen()),
-                  );
-                },
-                backgroundColor: tCheckColor,
-                textColor: tTextFieldBackgroundColor,
-              ),
-            ],
+    setState(() {
+      if (_newPasswordController.text.isEmpty || _confirmPasswordController.text.isEmpty){
+        _newInvalid = true;
+      } else {
+        _newInvalid = false;
+      }
+      if (!_newInvalid){
+        if (_newPasswordController.text != _confirmPasswordController.text ) {
+          // Password và Confirm Password khớp nhau
+          showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                icon: const Icon(
+                  Icons.error,
+                  color: tErrorColor,
+                ),
+                title: const Text(tErrorpw,
+                    style: TextStyle(color: tErrorColor)), // Add more details
+                actions: [
+                  buildCustomButtonPopUp(
+                    text: tClose,
+                    onPressed: () {
+                      Navigator.of(context).pop(); // Close the current dialog
+                    },
+                    backgroundColor: tErrorColor,
+                    textColor: tTextFieldBackgroundColor,
+                  ),],);
+            },
           );
-        },
-      );
-      // Additional logic after successful password confirmation can be added here
-    } else {
-      // Password và Confirm Password không khớp
-      showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            icon: const Icon(
-              Icons.error,
-              color: tErrorColor,
-            ),
-            title: const Text(tErrorpw,
-                style: TextStyle(color: tErrorColor)), // Add more details
-            actions: [
-              buildCustomButtonPopUp(
-                text: tClose,
-                onPressed: () {
-                  Navigator.of(context).pop(); // Close the current dialog
-                },
-                backgroundColor: tErrorColor,
-                textColor: tTextFieldBackgroundColor,
-              ),
-            ],
-          );
-        },
-      );
-    }
+        } else {
+          // Password và Confirm Password không khớp
+          showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                icon: const Icon(
+                  Icons.check_circle,
+                  color: tCheckColor,
+                ),
+                title: const Text(tCheckpw),
+                actions: [
+                  buildCustomButtonPopUp(
+                    text: tClose,
+                    onPressed: () {
+                      Navigator.of(context).pop(); // Close the current dialog
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WelcomeScreen()),
+                      );
+                    },
+                    backgroundColor: tCheckColor,
+                    textColor: tTextFieldBackgroundColor,
+                  ),],
+              );},
+          );}
+      }
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -84,7 +89,6 @@ class _NewpwState extends State<Newpw> {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back), // Sử dụng biểu tượng mũi tên quay lại
             onPressed: () {
-              // Xử lý sự kiện khi người dùng nhấn biểu tượng
               // Điều hướng đến trang khác ở đây
               Navigator.pop(context);
             },
@@ -129,6 +133,7 @@ class _NewpwState extends State<Newpw> {
                       controller: _newPasswordController,
                       obscureText: _obscureText,
                       decoration: TTextFormFieldTheme.inputDecoration(
+                        errorText : _newInvalid ? tErrorNew: null,
                         labelText: tPassword,
                       ),
                     ),
@@ -150,6 +155,7 @@ class _NewpwState extends State<Newpw> {
                       controller: _confirmPasswordController,
                       obscureText: _obscureConfirmpass,
                       decoration: TTextFormFieldTheme.inputDecoration(
+                        errorText : _newInvalid ? tErrorNew: null,
                         labelText: tVerifyPassword,
                       ),
                     ),
